@@ -33,7 +33,7 @@ const edit = (req, res) => {
 
 const storage = new Storage({
   projectId: process.env.GCLOUD_PROJECT_ID,
-  keyFilename: process.env.GCLOUD_KEY_FILE
+  credentials: JSON.parse(process.env.GCLOUD_SERVICE_ACCOUNT_JSON)
 });
 const bucketName = process.env.GCLOUD_BUCKET_NAME; 
 
