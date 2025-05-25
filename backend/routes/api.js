@@ -2,9 +2,9 @@ import express from 'express';
 import * as NewsController from '../controller/NewsController.js';
 import * as UserController from '../controller/UserController.js';
 import * as CategoryController from '../controller/CategoryController.js';
-import { upload } from '../controller/NewsController.js';
 import { verifyToken } from '../middleware/verifyToken.js';
 import { getAccessToken } from '../controller/TokenController.js';
+import { uploadImage } from '../utils/uploadImage.js';
 
 const router = express.Router();
 
@@ -33,9 +33,9 @@ router.get('/news/count', verifyToken,  NewsController.countNews);
 router.get('/news/category/:categoryId', NewsController.getNewsByCategory);
 router.get('/news/:id', NewsController.getNewsById);
 // router.post('/news', NewsController.createNews);
-router.put('/news/:id', verifyToken, upload.single('image'), NewsController.updateNews);
+router.put('/news/:id', verifyToken, uploadImage.single('image'), NewsController.updateNews);
 router.delete('/news/:id', verifyToken, NewsController.deleteNews);
 
-router.post('/news', verifyToken, upload.single('image'), NewsController.createNews);
+router.post('/news', verifyToken, uploadImage.single('image'), NewsController.createNews);
 
 export default router;

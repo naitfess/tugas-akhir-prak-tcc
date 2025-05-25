@@ -30,7 +30,7 @@ app.use(cors({
 app.use(express.json());
 app.use(route);
 app.use('/api', api);
-app.use('/uploads', express.static(path.join(process.cwd(), 'public', 'uploads')));
+app.use('/uploads', express.static('uploads'));
 
 applyAssociations();
 // Sync DB
