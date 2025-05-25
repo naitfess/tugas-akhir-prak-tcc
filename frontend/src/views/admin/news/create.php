@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$be_url = 'http://localhost:5000';
+$be_url = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 ?>
 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 	<!--begin::Content wrapper-->
@@ -251,7 +251,7 @@ ob_start();
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const beUrl = 'http://localhost:5000';
+    const beUrl = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 
     // Fetch categories and populate select
     fetch(`${beUrl}/api/categories` )

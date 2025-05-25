@@ -214,7 +214,7 @@ ob_start();
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const beUrl = 'http://localhost:5000';
+    const beUrl = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 
     const updateCount = (endpoint, elementId) => {
         fetch(`${beUrl}/api/${endpoint}/count`,{

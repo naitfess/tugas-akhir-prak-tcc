@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$be_url = 'http://localhost:5000';
+$be_url = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 ?>
 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
     <!--begin::Content wrapper-->
@@ -118,7 +118,7 @@ ob_start();
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const beUrl = 'http://localhost:5000';
+    const beUrl = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 
     function fetchNews() {
     fetch(`${beUrl}/api/news`)
@@ -137,11 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${idx + 1}</td>
                     <td>
                         <div class="d-flex">
-                            <a href="http://localhost:5000/admin/news/edit/${news.id}" class="symbol symbol-50px">
+                            <a href="https://be-trigger-ta-alung-1061342868557.us-central1.run.app/admin/news/edit/${news.id}" class="symbol symbol-50px">
                                 <span class="symbol-label" style="background-image:url('${news.image || 'public/metronic/media//stock/ecommerce/68.png'}');"></span>
                             </a>
                             <div class="ms-5 align-items-center d-flex">
-                                <a href="http://localhost:5000/admin/news/edit/${news.id}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">${news.title}</a>
+                                <a href="https://be-trigger-ta-alung-1061342868557.us-central1.run.app/admin/news/edit/${news.id}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">${news.title}</a>
                             </div>
                         </div>
                     </td>
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </a>
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                             <div class="menu-item px-3">
-                                <a href="http://localhost:5000/admin/news/edit/${news.id}" class="menu-link px-3">Edit</a>
+                                <a href="https://be-trigger-ta-alung-1061342868557.us-central1.run.app/admin/news/edit/${news.id}" class="menu-link px-3">Edit</a>
                             </div>
                             <div class="menu-item px-3">
                                 <a href="#" class="menu-link px-3" data-kt-ecommerce-category-filter="delete_row">Delete</a>
