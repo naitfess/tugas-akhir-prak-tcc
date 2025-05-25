@@ -1,8 +1,2 @@
-runtime: php81
-
-handlers:
-  - url: /public
-    static_dir: public
-
-  - url: /.*
-    script: auto
+runtime: custom
+env: flex
