@@ -12,11 +12,10 @@ import User from './model/User.js';
 import bcrypt from 'bcrypt';
 dotenv.config();
 
-const DB_PORT = process.env.DB_PORT;
 const SEEDER_PASSWORD = process.env.SEEDER_PASSWORD;
 
 const app = express()
-const port = DB_PORT
+const port = 5000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
