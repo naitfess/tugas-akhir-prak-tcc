@@ -2,7 +2,7 @@ import Category from '../model/Category.js';
 import News from '../model/News.js';
 import dotenv from 'dotenv';
 dotenv.config();
-const fe_url = 'http://localhost:8080/tugas-akhir/frontend/src/views';
+const fe_url = 'https://fe-alung-ta-dot-b-01-450713.uc.r.appspot.com/src/views';
 
 const index = (req, res) => {
   res.redirect(`${fe_url}/admin/category/index.html`);

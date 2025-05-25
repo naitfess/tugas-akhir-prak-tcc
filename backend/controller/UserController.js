@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 dotenv.config();
-const fe_url = 'http://localhost:8080/tugas-akhir/frontend/src/views';
+const fe_url = 'https://fe-alung-ta-dot-b-01-450713.uc.r.appspot.com/src/views';
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 
