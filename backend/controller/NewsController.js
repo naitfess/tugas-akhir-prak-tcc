@@ -5,6 +5,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import { Op } from 'sequelize';
+import { Storage } from '@google-cloud/storage';
 dotenv.config();
 const fe_url = 'https://fe-alung-ta-dot-b-01-450713.uc.r.appspot.com/src/views/';
 
@@ -20,16 +21,22 @@ const edit = (req, res) => {
   res.redirect(`${fe_url}admin/news/edit.html?id=${req.params.id}`);
 }
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'public/uploads');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
-});
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'public/uploads');
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + '-' + file.originalname);
+//   }
+// });
 
-export const upload = multer({ storage });
+const storage = new Storage({
+  projectId: process.env.GCLOUD_PROJECT_ID,
+  keyFilename: process.env.GCLOUD_KEY_FILE
+});
+const bucketName = process.env.GCLOUD_BUCKET_NAME; 
+
+export const upload = multer({ storage: multer.memoryStorage() });
 
 export const createNews = async (req, res) => {
   try {
@@ -37,10 +44,21 @@ export const createNews = async (req, res) => {
     let categoryIds = req.body['categoryIds[]'] || req.body.categoryIds;
     if (categoryIds && !Array.isArray(categoryIds)) categoryIds = [categoryIds];
 
-    let imageUrl = req.body.image || null;
+    let imageUrl = null;
     if (req.file) {
-      imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
-    } else if (!imageUrl) {
+      // Upload ke Google Cloud Storage
+      const gcsFileName = Date.now() + '-' + req.file.originalname;
+      const bucket = storage.bucket(bucketName);
+      const file = bucket.file(gcsFileName);
+
+      await file.save(req.file.buffer, {
+        metadata: { contentType: req.file.mimetype },
+        public: true,
+        validation: 'md5'
+      });
+
+      imageUrl = `https://storage.googleapis.com/${bucketName}/${gcsFileName}`;
+    } else {
       return res.status(400).json({ message: 'Image is required' });
     }
 
