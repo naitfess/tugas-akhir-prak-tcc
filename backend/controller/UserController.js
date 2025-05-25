@@ -8,7 +8,7 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 
 const index = (req, res) => {
-  res.redirect(`${fe_url}/admin/user/index.php`);
+  res.redirect(`${fe_url}/admin/user/index.html`);
 };
 
 const getAllUsers = async (req, res) => {
