@@ -9,15 +9,15 @@ dotenv.config();
 const fe_url = process.env.FE_URL || 'http://localhost:8080/tugas-akhir/frontend/src/views/';
 
 const index = (req, res) => {
-  res.redirect(`${fe_url}admin/news/index.php`);
+  res.redirect(`${fe_url}admin/news/index.html`);
 };
 
 const create = (req, res) => {
-  res.redirect(`${fe_url}admin/news/create.php`);
+  res.redirect(`${fe_url}admin/news/create.html`);
 };
 
 const edit = (req, res) => {
-  res.redirect(`${fe_url}admin/news/edit.php?id=${req.params.id}`);
+  res.redirect(`${fe_url}admin/news/edit.html?id=${req.params.id}`);
 }
 
 const storage = multer.diskStorage({

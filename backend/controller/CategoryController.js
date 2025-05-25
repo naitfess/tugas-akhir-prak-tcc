@@ -5,7 +5,7 @@ dotenv.config();
 const fe_url = 'http://localhost:8080/tugas-akhir/frontend/src/views';
 
 const index = (req, res) => {
-  res.redirect(`${fe_url}/admin/category/index.php`);
+  res.redirect(`${fe_url}/admin/category/index.html`);
 };
 
 export const createCategory = async (req, res) => {

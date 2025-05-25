@@ -148,7 +148,7 @@
 
 					if (response.ok && result.status === "Success") {
 						localStorage.setItem('accessToken', result.accessToken);
-						window.location.href = `${feUrl}/admin/dashboard.php`;
+						window.location.href = `${feUrl}/admin/dashboard.html`;
 					} else {
 						alert(result.message || 'Login gagal.');
 					}
