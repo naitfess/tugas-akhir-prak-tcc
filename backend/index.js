@@ -10,6 +10,7 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import User from './model/User.js';
 import bcrypt from 'bcrypt';
+import cors from 'cors';
 dotenv.config();
 
 const SEEDER_PASSWORD = process.env.SEEDER_PASSWORD;
@@ -21,7 +22,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://fe-alung-ta-dot-b-01-450713.uc.r.appspot.com"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(route);
 app.use('/api', api);

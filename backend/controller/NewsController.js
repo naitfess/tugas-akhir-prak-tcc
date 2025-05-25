@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import { Op } from 'sequelize';
 dotenv.config();
-const fe_url = process.env.FE_URL || 'http://localhost:8080/tugas-akhir/frontend/src/views/';
+const fe_url = 'https://fe-alung-ta-dot-b-01-450713.uc.r.appspot.com/src/views/';
 
 const index = (req, res) => {
   res.redirect(`${fe_url}admin/news/index.html`);
