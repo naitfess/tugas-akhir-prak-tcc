@@ -1,5 +1,5 @@
 <?php
- $be_url = "http://localhost:5000"; 
+ $be_url = "https://be-trigger-ta-alung-1061342868557.us-central1.run.app"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -272,7 +272,7 @@
 		<!--begin::Javascript-->
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
-				const beUrl = 'http://localhost:5000';
+				const beUrl = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 				const feUrl = 'http://localhost:8080/tugas-akhir/frontend/src/views';
 				fetch(`${beUrl}/api/get-logged-in-user`, {
 					method: 'GET',

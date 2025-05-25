@@ -191,7 +191,7 @@ ob_start();
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const beUrl = 'http://localhost:5000'; 
+    const beUrl = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app'; 
     const feUrl = 'http://localhost:8080/frontend/src/views';
 
     function renderNews(newsList) {

@@ -117,7 +117,7 @@
 		<!--begin::Javascript-->
 		<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			const beUrl = 'http://localhost:5000';
+			const beUrl = 'https://be-trigger-ta-alung-1061342868557.us-central1.run.app';
 			const feUrl = 'http://localhost:8080/tugas-akhir/frontend/src/views';
 			const form = document.getElementById('kt_sign_in_form');
 			const submitBtn = document.getElementById('kt_sign_in_submit');
